@@ -38,6 +38,10 @@ db.on("error", (err) => {
 const fruitsController = require("./controllers/fruit_control.js");
 app.use("/fruits", fruitsController);
 
+app.get("/", (req, res) => {
+  res.redirect("/fruits");
+})
+
 app.listen(port, () => {
   console.log("Fruits app is listening on port: " + port);
 });
